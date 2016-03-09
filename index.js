@@ -48,10 +48,9 @@ function sanitizeDirection(direction) {
 }
 
 /**
- *
+ * @class
  * @param {Array} options
- *                      - pinsFilename
- *
+ *                     - pinsFilename
  */
 function gpio(options) {
 
