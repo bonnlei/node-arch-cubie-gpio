@@ -30,7 +30,7 @@ describe('GPIO', function () {
         writer.args[3][1].should.be.equal('out');
     });
 
-    it('write pin ', function () {
+    it('writes pin ', function () {
         var writer = sinon.spy(fs, 'writeFile');
         var gpio = new GPIO({pinsFilename: __dirname + '/fixture/pins'});
         var compiled = _.template('/sys/class/gpio/gpio<%= pin %>/value');
