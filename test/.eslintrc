@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": false,
+    "node": true,
+    "mocha": true,
+    "es6": false
+  },
+  "handle-callback-err": [
+    2,
+    "^(err|error|anySpecificError)$"
+  ]
+}
