@@ -49,8 +49,8 @@ function sanitizeDirection(direction) {
 
 /**
  * @class
- * @param {Array} options
- *                     - pinsFilename
+ * @param {Object} options - settings
+ * @param {String} [options.pinsFilename ='/sys/kernel/debug/pinctrl/1c20800.pinctrl/pins'] - registered pins
  */
 function gpio(options) {
 
