@@ -1,0 +1,25 @@
+{
+  "name": "node-arch-cubie-gpio",
+  "version": "0.0.1",
+  "description": "Access GPIO of Cubieboard 2 with NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonnlei/node-arch-cubie-gpio.git"
+  },
+  "keywords": [
+    "Cubienoard",
+    "NodeJs",
+    "GPIO",
+    "ArchLinux"
+  ],
+  "author": "Lei Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bonnlei/node-arch-cubie-gpio/issues"
+  },
+  "homepage": "https://github.com/bonnlei/node-arch-cubie-gpio#readme"
+}
