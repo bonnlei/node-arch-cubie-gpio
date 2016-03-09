@@ -26,7 +26,8 @@
   "devDependencies": {
     "eslint": "^2.3.0",
     "mocha": "^2.4.5",
-    "should": "^8.2.2"
+    "should": "^8.2.2",
+    "sinon": "^1.17.3"
   },
   "dependencies": {
     "lodash": "^4.6.1"
