@@ -7,7 +7,7 @@ var _ = require('lodash');
 /**
  *
  * @param {String} filename - GPIO Pins file in the ArchLinux
- * @returns {Array}
+ * @returns {Object}
  *                 - {Int} pin
  *                 - {String} gpio
  */
