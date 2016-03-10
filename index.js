@@ -67,9 +67,10 @@ function gpio(options) {
     this.activatePinsOutput = function (gpioKeys) {
         var self = this;
         _(gpioKeys).forEach(function (key) {
+            self.exportPin(key);
             self.setDirection(key, 'out');
         });
-    }
+    };
 
     this.setDirection = function (gpioKey, direction) {
         var pin = this.getPin(gpioKey);
@@ -77,10 +78,17 @@ function gpio(options) {
             throw new Error(gpioKey + ' not found');
         }
 
-        fs.writeFile(this.gpioFilename + "/gpio" + pin + "/direction", sanitizeDirection(direction), function (err) {
-            if (err) throw err;
-        });
-    }
+        fs.writeFileSync(this.gpioFilename + "/gpio" + pin + "/direction", sanitizeDirection(direction));
+    };
+
+    this.exportPin = function (gpioKey) {
+        var pin = this.getPin(gpioKey);
+        if (_.isNull(pin)) {
+            throw new Error(gpioKey + ' not found');
+        }
+
+        fs.writeFileSync(this.gpioFilename + "/export", pin);
+    };
 
     this.getPin = function (gpioKey) {
         var found = _.find(this.pins, _.matchesProperty('gpio', gpioKey));
@@ -88,7 +96,7 @@ function gpio(options) {
             return found.pin;
         }
         return null;
-    }
+    };
 
     this.write = function (gpioKey, signal) {
         if (_.isEmpty(signal))
@@ -97,9 +105,7 @@ function gpio(options) {
         if (_.isNull(pin)) {
             throw new Error(gpioKey + ' not found');
         }
-        fs.writeFile(this.gpioFilename + "/gpio" + pin + "/value", signal, 'utf8', function (err) {
-            if (err) throw err;
-        });
+        fs.writeFileSync(this.gpioFilename + "/gpio" + pin + "/value", signal);
     }
 }
 
