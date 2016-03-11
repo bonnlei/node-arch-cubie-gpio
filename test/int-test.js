@@ -6,8 +6,8 @@ var sleep = require('sleep');
 require('should');
 
 describe('GPIO', function () {
-    this.timeout(30000);
-    it('writes signals', function (done) {
+
+    it('writes signals', function () {
         var gpio = new GPIO({});
         var gpioNames = ['PG3', 'PG1', 'PG6', 'PG8'];
         _.forEach(gpioNames, function (gp) {
@@ -20,10 +20,7 @@ describe('GPIO', function () {
             var pin = gpio.getPin(gp);
             gpio.writeToPin(pin, '0');
         });
-
-
         true.should.be.equal(true);
-        setTimeout(done, 30000);
     });
 
 });
