@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/mocha -R spec test/unit-test.js",
+    "test-int": "NODE_ENV=test ./node_modules/.bin/mocha -R spec test/int-test.js",
     "test-debug": "NODE_ENV=test ./node_modules/.bin/mocha -R spec --debug-brk test/unit-test.js"
   },
   "repository": {
