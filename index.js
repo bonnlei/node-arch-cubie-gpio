@@ -63,12 +63,14 @@ function gpio(options) {
     }
 
     this.pins = getPins(this.pinsFilename);
+    console.log('Pins: ' + this.pins);
 
     this.activatePinsOutput = function (gpioKeys) {
         var self = this;
         _(gpioKeys).forEach(function (key) {
             self.exportPin(key);
             self.setDirection(key, 'out');
+            console.log('Pin ' + key + ' activated');
         });
     };
 
@@ -106,6 +108,7 @@ function gpio(options) {
             throw new Error(gpioKey + ' not found');
         }
         fs.writeFileSync(this.gpioFilename + "/gpio" + pin + "/value", signal);
+        console.log('Writes ' + signal + ' to ' + pin);
     }
 }
 

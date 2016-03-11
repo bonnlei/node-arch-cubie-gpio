@@ -27,9 +27,11 @@
     "eslint": "^2.3.0",
     "mocha": "^2.4.5",
     "should": "^8.2.2",
-    "sinon": "^1.17.3"
+    "sinon": "^1.17.3",
+    "sleep": "^3.0.1"
   },
   "dependencies": {
-    "lodash": "^4.6.1"
+    "lodash": "^4.6.1",
+    "sync-exec": "^0.6.2"
   }
 }
