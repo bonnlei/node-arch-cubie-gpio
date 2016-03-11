@@ -3,6 +3,7 @@
 var GPIO = require('../index');
 var _ = require('lodash');
 var sleep = require('sleep');
+require('should');
 
 describe('GPIO', function () {
 
@@ -13,10 +14,11 @@ describe('GPIO', function () {
         _.forEach(pins, function (pin) {
             gpio.write(pin, '1');
         });
-        sleep.sleep(5);
+        sleep.sleep(10);
         _.forEach(pins, function (pin) {
             gpio.write(pin, '0');
         });
+        true.should.be.equal(true);
     });
 
 });

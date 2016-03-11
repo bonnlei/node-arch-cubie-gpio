@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var _ = require('lodash');
-
+var sleep = require('sleep');
 
 /**
  *
@@ -69,7 +69,9 @@ function gpio(options) {
         var self = this;
         _(gpioKeys).forEach(function (key) {
             self.exportPin(key);
+            sleep.usleep(10);
             self.setDirection(key, 'out');
+            sleep.usleep(10);
             console.log('Pin ' + key + ' activated');
         });
     };
