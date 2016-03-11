@@ -72,7 +72,7 @@ function gpio(options) {
 
     /**
      *
-     * @param {String} pin - pin number
+     * @param {Number} pin - pin number
      * @param {String} direction - 'out' or 'in'
      * @returns {void}
      */
@@ -121,7 +121,7 @@ function gpio(options) {
 
     /**
      *
-     * @param {String} pin - pin number
+     * @param {Number} pin - pin number
      * @param {String} signal - '0' or '1'
      * @returns {void}
      */
